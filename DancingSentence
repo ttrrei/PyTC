@@ -1,0 +1,17 @@
+#https://community.topcoder.com/stat?c=problem_statement&pm=5950
+
+class DancingSentence:
+    def makeDancing(self, sentence):
+        flag = 1
+        ans = ""
+        for e in sentence:
+            if (e.isalpha()):
+                if (flag == 1):
+                    ans = ans + e.upper()
+                    flag = 0
+                else:
+                    ans = ans + e.lower()
+                    flag = 1
+            else: 
+                ans = ans + e
+        return (ans)
