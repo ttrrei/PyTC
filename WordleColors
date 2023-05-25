@@ -1,0 +1,24 @@
+#https://community.topcoder.com/stat?c=problem_statement&pm=17700
+class WordleColors:
+    def color (self, hidden, guess):
+        ans = []
+        seq = []
+        pool = []
+        test = []
+        for e in range(5):
+            if hidden[e] == guess[e]:
+                ans.append("g")
+            else:
+                ans.append("-")
+                seq.append(e)
+                pool.append(hidden[e])
+                test.append(guess[e])
+
+        for i in range(len(test)):
+            print(test)
+            print(pool)
+            if test[i] in pool:
+                # print(pool.index(test[i]))
+                del pool[pool.index(test[i])]
+                ans[seq[i]] = 'y'
+        return("".join(ans))
