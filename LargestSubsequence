@@ -1,0 +1,18 @@
+#https://community.topcoder.com/stat?c=problem_statement&pm=11471
+class LargestSubsequence:
+    def getLargest(self,s):
+        m = ""
+        while len(s) > 0:
+            index = self.lastChar(s)
+            m = m + s[index]
+            s = s[index + 1:]
+        return m
+
+    def lastChar(self,s):
+        list = []
+        for i in s:
+            list.append(ord(i))
+
+        list.sort(reverse=True)
+
+        return s.find(chr(list[0]))
