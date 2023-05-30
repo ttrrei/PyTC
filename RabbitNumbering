@@ -1,0 +1,14 @@
+#https://community.topcoder.com/stat?c=problem_statement&pm=10697
+class RabbitNumbering:
+    def theCount(self, maxNumber):
+        nums = list(maxNumber)
+        nums.sort()
+        sum = 1
+        loop = 0
+        for i in nums:
+            loop += 1
+            if i < loop: return 0
+            sum = (sum* (i-loop+1))%1000000007
+        
+        
+        return sum
