@@ -1,28 +1,31 @@
 #https://community.topcoder.com/stat?c=problem_statement&pm=12296
 class TomekPhone:
+    def minKeystrokes(self,frequencies, keySizes):
+        # sfreqc = sorted(frequencies, reverse=True)
 
-    def minKeystrokes(self, frequencies, keySizes):
-        frequencies.sort(reverse=True)
+        sfreqc = list(frequencies)
+        sfreqc.sort(reverse=True)
+        skeysz = list(keySizes)
+        # frequencies.sort(reverse=True)
         loop = 1
         ans = 0
         totalSize = 0
-        for i in keySizes:
+        for i in skeysz:
             totalSize = totalSize + i
-        if totalSize < len(frequencies):
+        if totalSize < len(sfreqc):
             return (-1)
 
-        while len(frequencies) > 0:
-            tempLen = len(keySizes)
-            tempFre = frequencies[0:tempLen]
-            frequencies = frequencies[tempLen:]
+        while len(sfreqc) > 0:
+            tempLen = len(skeysz)
+            tempFre = sfreqc[0:tempLen]
+            sfreqc = sfreqc[tempLen:]
             for i in tempFre:
                 ans = ans + i * loop
             loop = loop + 1
-            keySizes = self.reduce(keySizes)
+            skeysz = self.reduce(skeysz)
         return ans
 
     def reduce(self, list):
-
         for i in range(len(list)):
             list[i] = list[i] - 1
         list = [x for x in list if x != 0]
