@@ -1,0 +1,21 @@
+#https://community.topcoder.com/stat?c=problem_statement&pm=17129
+class ReconstructPermutation:
+    def reconstruct(self, N, partial):
+        ans = list(partial)
+        miss = []
+        for i in range(N):
+            if i not in partial:
+                miss.append(i)
+        print(miss)
+        for i in miss:
+            flag = 0
+            for m in partial:
+                if i < m and flag == 0:
+                    idx = ans.index(m)
+                    ans.insert(idx, i)
+                    flag = 1
+            if flag == 0:
+                ans.append(i)
+
+
+        return ans
