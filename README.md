@@ -8,4 +8,5 @@ Trying to solve some problems on Top Coder occasionally.
 Each file contain a link of the problem, and the class of solution which PASS all the test.
 
 ###############################################
+
 Keep mind sharp, keep programming skill sharper.
