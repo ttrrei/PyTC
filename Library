@@ -1,0 +1,13 @@
+#https://community.topcoder.com/stat?c=problem_statement&pm=7659
+class Library:
+    def documentAccess(self, records, userGroups, roomRights):
+        ans = []
+        for i in records:
+            comb = i.split(" ")
+            if len(comb) < 3:
+                return -1
+            if comb[2] in userGroups and comb[1] in roomRights:
+                ans.append(comb[0])
+
+        return len(set(ans))
+
