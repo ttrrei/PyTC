@@ -9,4 +9,4 @@ Each file contain a link of the problem, and the class of solution which PASS al
 
 ###############################################
 
-Keep mind sharp, keep programming skill sharper.
+Keep programming skill sharp, keep mind sharper.
